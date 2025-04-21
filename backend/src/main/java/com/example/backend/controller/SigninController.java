@@ -27,7 +27,7 @@ public class SigninController {
         Optional<Signin> existingUser = signinRepository.findByEmail(user.getEmail());
         System.out.println("Entered password: " + user.getPassword());
         if (existingUser.isPresent()) {
-            return ResponseEntity.ok("Login successful! Welcome " + existingUser.get().getName());
+            return ResponseEntity.ok("Login successful! Welcome " + existingUser.get().getEmail());
         } else {
             return ResponseEntity.status(401).body("Invalid credentials. Please try again.");
         }
