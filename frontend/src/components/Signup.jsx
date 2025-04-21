@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import './Signup.css'
 
 const Signup = () => {
     const [data, setData] = useState({
@@ -37,31 +38,40 @@ const Signup = () => {
     }
 
     return (
-        <div>
-            <form onSubmit={handleForm}>
-                <input
-                    type="text"
-                    name="email"
-                    placeholder="Email"
-                    value={data.email}
-                    onChange={handleChange}
-                />
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    value={data.name}
-                    onChange={handleChange}
-                />
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    value={data.password}
-                    onChange={handleChange}
-                />
-                <button type="submit">Submit</button>
-            </form>
+        <div className="signup-container">
+            <div className="signup-card">
+                <h2>Signup</h2>
+                <form onSubmit={handleForm} className="signup-form">
+                    <div className="input-group">
+                        <input
+                            type="text"
+                            name="email"
+                            placeholder="Email"
+                            value={data.email}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="input-group">
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Name"
+                            value={data.name}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="input-group">
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            value={data.password}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
         </div>
     )
 }
